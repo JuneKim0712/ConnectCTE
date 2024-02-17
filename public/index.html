@@ -1,51 +1,107 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Firebase Hosting</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
 
-    <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
-    <script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
-    <script defer src="app.js"></script>
+<section id="whenSignedOut">
+  <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
+</section>
 
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-    integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-  </head>
-  
-  <body>
-  
-    <section id="whenSignedOut">
-  
-      <button id="signInBtn" class="btn btn-primary">Sign in with Google</button>
-  
-    </section>
-  
-    <section id="whenSignedIn" hidden="true">
-  
-      <div id="userDetails"></div>
-  
-      <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
-  
-    </section>
-  
-    <hr>
-  
-    <section>
-  
-      <h2>My Firestore Things</h2>
-  
-      <ul id="thingsList">
-  
-      </ul>
-  
-    </section>
-  
-  
-  
-  </body>
-  
-  </html>
+<section id="whenSignedIn" hidden="true">
+  <div id="userDetails"></div>
+  <button id="signOutBtn" class="btn btn-primary">Sign Out</button>
+</section>
+
+<div class="container mt-5">
+  <div class="header">
+    <h2>Business and Community Partners</h2>
+    <button id="addPartnerBtn" class="btn btn-primary">Add Partner</button>
+  </div>
+  <div class="search-container">
+    <button id="resetBtn" class="btn btn-primary">Reset</button>
+    <select id="typeFilter">
+      <option value="">Filter by Type</option>
+      <option value="Business">Business</option>
+      <option value="Community">Community</option>
+    </select>
+    <select id="sectorFilter">
+      <option value="">Filter by Sector</option>
+      <option value="Technology">Technology</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Finance">Finance</option>
+      <option value="Non-profit">Non-profit</option>
+      <!-- Add more options for other sectors -->
+    </select>
+    <input type="text" id="searchInput" placeholder="Search...">
+  </div>  
+  <hr>
+  <form id="partnerForm" hidden>
+
+    <input type="text" id="nameInput" placeholder=" Name" required>
+
+    <select id="typeInput" required>
+      <option value="">Select Type</option>
+      <option value="Business">Business</option>
+      <option value="Community">Community</option>
+    </select>
+
+    <select id="sectorInput" required>
+      <option value="">Select Sector</option>
+      <option value="Technology">Technology</option>
+      <option value="Healthcare">Healthcare</option>
+      <option value="Finance">Finance</option>
+      <option value="Non-profit">Non-profit</option>
+      <option value="Energy">Energy</option>
+      <option value="Environment">Environment</option>
+      <option value="Arts">Arts</option>
+      <option value="Entrepreneurship">Entrepreneurship</option>
+      <option value="Manufacturing">Manufacturing</option>
+      <option value="Education">Education</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <input type="text" id="resourcesInput" placeholder="Resources" required>
+    <input type="text" id="individualInput" placeholder="Individual" required>
+    <input type="email" id="emailInput" placeholder="Email" required>
+    <input type="tel" id="phoneInput" placeholder="Phone (ex: xxx-xxx-xxxx)" required>
+    <input type="text" id="addressInput" placeholder="Address" required>
+    <input type="date" id="dateInput" required>
+    <button type="submit" class="btn btn-success">Submit</button>
+    <button id="closeFormBtn" type="button" class="close-btn">Close</button>
+  </form>
+
+  <div class="table-container">
+    <table class="table">
+      <thead>
+        <tr>
+          <th data-column="name">Name <span class="sort-indicator"></span></th>
+          <th data-column="type">Type <span class="sort-indicator"></span></th>
+          <th data-column="sector">Sector <span class="sort-indicator"></span></th>
+          <th data-column="resources">Resources <span class="sort-indicator"></span></th>
+          <th data-column="individual">Individual <span class="sort-indicator"></span></th>
+          <th data-column="email">Email <span class="sort-indicator"></span></th>
+          <th data-column="phone">Phone <span class="sort-indicator"></span></th>
+          <th data-column="address">Address <span class="sort-indicator"></span></th>
+          <th data-column="date">Date <span class="sort-indicator"></span></th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="thingsList">
+        <!-- Table rows will be populated here -->
+      </tbody>
+    </table>
+  </div>
+</div>
+<script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
+<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<script defer src="app.js"></script>
+</body>
+</html>

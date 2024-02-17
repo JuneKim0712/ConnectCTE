@@ -2,8 +2,59 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    // Allow read access to all documents
     match /{document=**} {
-      allow read, write: if true;
+      allow read: if true;
+    }
+    
+    // Define rules for the "partners" collection
+    match /partners/{partnerId} {
+      allow create: if isValidPartnerData(request.resource.data);
+      allow update, delete: if request.auth.uid != null; // Allow update and delete if the user is authenticated
+      
+      // Function to validate partner data
+      function isValidPartnerData(data) {
+        return isValidName(data.name) &&
+               isValidType(data.type) &&
+               isValidSector(data.sector) &&
+               data.resources is string && data.resources != '' &&
+               isValidEmail(data.email) &&
+               isValidPhone(data.phone) &&
+               data.address is string && data.address != '' &&
+               isValidDate(data.date);
+      }
+      
+      // Validation function for name (must be a string)
+      function isValidName(name) {
+        return name is string && name != '';
+      }
+
+      // Validation function for type (must be either "Business" or "Community")
+      function isValidType(type) {
+        return type == 'Business' || type == 'Community';
+      }
+
+      // Validation function for sector
+      function isValidSector(sector) {
+        return sector in ['Technology', 'Healthcare', 'Finance', 'Non-profit',
+                          'Energy', 'Environment', 'Arts', 'Entrepreneurship',
+                          'Manufacturing', 'Education', 'Other'];
+      }
+
+      // Validation function for email (must be a valid email format)
+      function isValidEmail(email) {
+        return email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+      }
+
+      // Validation function for phone (must be in xxx-xxx-xxxx format)
+      function isValidPhone(phone) {
+        return phone.matches('^\\d{3}-\\d{3}-\\d{4}$');
+      }
+
+      // Validation function for date (must be a valid date format)
+      function isValidDate(date) {
+        return date.matches('^\\d{4}-\\d{2}-\\d{2}$');
+      }
     }
   }
 }
