@@ -19,7 +19,7 @@ body {
 
 
 .container {
-    max-width: 1200px; /* Increased max-width for wider container */
+    max-width: 90%; /* Increased max-width for wider container */
     margin: 0 auto;
     padding: 10px; /* Reduced padding */
 }
@@ -32,6 +32,10 @@ body {
 }
 /* Ensure sort indicator stays in the same line */
 .table th {
+    white-space: nowrap; /* Prevent wrapping */
+}
+
+#actionBtn {
     white-space: nowrap; /* Prevent wrapping */
 }
 
@@ -159,6 +163,7 @@ h2 {
 .btn-secondary {
     background-color: red;
     border-color: red;
+    padding: 10px;
 }
 
 .btn-secondary:hover {
