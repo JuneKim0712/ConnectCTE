@@ -31,8 +31,8 @@ let currentSortDirection = 'asc'
 const provider = new firebase.auth.GoogleAuthProvider()
 
 // Event listeners
-elements.signInBtn.onclick = () => auth.signInWithPopup(provider)
-elements.signOutBtn.onclick = () => auth.signOut()
+elements.signInBtn.onclick = () => auth.signInWithRedirect(provider)
+elements.signOutBtn.onclick = () => auth.signOut().then(location.reload())
 elements.addPartnerBtn.addEventListener('click', () => elements.partnerModal.modal('show'))
 elements.partnerModal.on('hidden.bs.modal', () => elements.partnerForm.reset())
 elements.submitPartnerBtn.addEventListener('click', handleFormSubmission)
@@ -128,7 +128,8 @@ function handleFormSubmission () {
 
   const [name, type, sector, resources, individual, email, phone, address, date] = values
 
-  if (!isValidName(name) || !isValidType(type) || !isValidSector(sector) || !isValidEmail(email) || !isValidPhone(phone) || !isValidDate(date)) {
+  if (!isValidInput(name) || !isValidType(type) || !isValidSector(sector) || !isValidInput(resources) ||
+  !isValidEmail(email) || !isValidInput(individual) || !isValidPhone(phone) || !isValidDate(date)) {
     alert('Please fill in all fields with valid data.')
     return
   }
@@ -238,22 +239,29 @@ const updateSortIndicators = () => {
 }
 
 // Validation functions
-function isValidName (name) { return typeof name === 'string' && name.trim() !== '' }
+function isValidInput (input) { return typeof input === 'string' && input.trim() !== '' }
 function isValidType (type) { return type === 'Business' || type === 'Community' }
 function isValidSector (sector) {
   const validSectors = ['Technology', 'Healthcare', 'Finance', 'Non-profit', 'Energy', 'Environment', 'Art', 'Entrepreneurship', 'Manufacturing', 'Education', 'Other']
   return validSectors.includes(sector)
 }
-function isValidEmail (email) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email) }
+function isValidEmail (email) { return email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$') }
 function isValidPhone (phone) { return /^\d{3}-\d{3}-\d{4}$/.test(phone) }
-function isValidDate (date) { return /^\d{4}-\d{2}-\d{2}$/.test(date) }
+function isValidDate (date) {
+  const [year, month, day] = date.split('-').map(Number)
+  const isValidFormat = /^\d{4}-\d{2}-\d{2}$/.test(date)
+  const isValidMonth = month >= 1 && month <= 12
+  const daysInMonth = new Date(year, month, 0).getDate()
+  const isValidDay = day >= 1 && day <= daysInMonth
+  return isValidFormat && isValidMonth && isValidDay
+}
 
 // Initial render
 let unsubWNoInput
 let unsubWInput = false
 let editMode = false
 let editPartnerId = ''
-// initDb(dbReference, example)
+initDb(dbReference, example)
 unsubWNoInput = fetchAndRenderPartners()
 doesInputExist()
 updateSortIndicators()

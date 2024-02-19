@@ -2,31 +2,30 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Allow read access to all documents
-    match /{document=**} {
-      allow read: if true;
-    }
-    
     // Define rules for the "partners" collection
-    match /partners/{partnerId} {
-      allow create: if isValidPartnerData(request.resource.data);
-      allow update, delete: if request.auth.uid != null; // Allow update and delete if the user is authenticated
+    match /partners/{docId} {
+      allow read, delete: if request.auth.token.email.matches('.*vusd[.]us$') &&
+      request.auth.token.email_verified;
+      allow create, update: if isValidPartnerData(request.resource.data) && 
+      request.auth.token.email.matches('.*vusd[.]us$') &&
+      request.auth.token.email_verified;
       
       // Function to validate partner data
       function isValidPartnerData(data) {
-        return isValidName(data.name) &&
+        return isValidInput(data.name) &&
                isValidType(data.type) &&
                isValidSector(data.sector) &&
-               data.resources is string && data.resources != '' &&
+               isValidInput(data.resources) &&
+               isValidInput(data.individual) &&
                isValidEmail(data.email) &&
                isValidPhone(data.phone) &&
-               data.address is string && data.address != '' &&
-               isValidDate(data.date);
+               isValidInput(data.address) &&
+               isValidDate(data.date);  
       }
       
       // Validation function for name (must be a string)
-      function isValidName(name) {
-        return name is string && name != '';
+      function isValidInput(input) {
+        return input is string && input != '';
       }
 
       // Validation function for type (must be either "Business" or "Community")
@@ -43,8 +42,9 @@ service cloud.firestore {
 
       // Validation function for email (must be a valid email format)
       function isValidEmail(email) {
-        return email.matches('^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$');
+        return email.matches('^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$');
       }
+
 
       // Validation function for phone (must be in xxx-xxx-xxxx format)
       function isValidPhone(phone) {
@@ -53,8 +53,11 @@ service cloud.firestore {
 
       // Validation function for date (must be a valid date format)
       function isValidDate(date) {
-        return date.matches('^\\d{4}-\\d{2}-\\d{2}$');
+          return date.matches('^\\d{4}-\\d{2}-\\d{2}$');
       }
+
+
     }
   }
 }
+
