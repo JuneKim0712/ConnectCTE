@@ -4,12 +4,19 @@ service cloud.firestore {
   match /databases/{database}/documents {
     // Define rules for the "partners" collection
     match /partners/{docId} {
-      allow read, delete: if request.auth.token.email.matches('.*vusd[.]us$') &&
-      request.auth.token.email_verified;
+      allow read: if IsVerifiedVusdEmail()
+      allow delete: if IsVerifiedVusdEmail()&& IsModerator()
       allow create, update: if isValidPartnerData(request.resource.data) && 
-      request.auth.token.email.matches('.*vusd[.]us$') &&
-      request.auth.token.email_verified;
+      IsVerifiedVusdEmail() && IsModerator()
       
+      function IsVerifiedVusdEmail(){
+      return request.auth.token.email.matches('.*vusd[.]us$') &&
+      request.auth.token.email_verified;
+      }
+      function IsModerator() {
+      return request.auth.uid in get(/databases/$(database)/documents/roles/SuperModerator).data.id || 
+      request.auth.uid in get(/databases/$(database)/documents/roles/Moderator).data.id
+      }
       // Function to validate partner data
       function isValidPartnerData(data) {
         return isValidInput(data.name) &&
@@ -60,4 +67,3 @@ service cloud.firestore {
     }
   }
 }
-
