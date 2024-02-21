@@ -1,3 +1,4 @@
+const { exec } = require('child_process')
 const assert = require('assert')
 const firebase = require('@firebase/testing')
 
@@ -6,6 +7,20 @@ const MY_PROJECT_ID = 'fbla23jk'
 function getFirestore (auth) {
   return firebase.initializeTestApp({ projectId: MY_PROJECT_ID, auth }).firestore()
 }
+
+// Start Firebase emulators before tests
+before(async function () {
+  this.timeout(20000) // Set timeout to 60 seconds
+  try {
+    console.log('Starting Firebase emulators...')
+    exec('firebase emulators:start --only firestore')
+    console.log('Firebase emulators started successfully!')
+    await new Promise(resolve => setTimeout(resolve, 2000))
+  } catch (error) {
+    console.error('Error starting Firebase emulators:', error)
+    process.exit(1)
+  }
+})
 
 beforeEach(async () => {
   await firebase.clearFirestoreData({ projectId: MY_PROJECT_ID })
@@ -21,11 +36,9 @@ beforeEach(async () => {
       address: '123 Main St',
       date: '2023-01-01'
     })
-})
+  })
 
-// example document
-
-describe('collect and store information about business and community partners', () => {
+describe('Check firestore.rule functions properly', () => {
   it('reject read to user that are not logged in', async () => {
     const myAuth = null
     const db = getFirestore(myAuth)
@@ -44,6 +57,7 @@ describe('collect and store information about business and community partners', 
     const testDoc = db.collection('partners')
     await firebase.assertFails(testDoc.get())
   })
+
   it('allows read to user who does not have email verified and has @vusd.us domain', async () => {
     const myAuth = { uid: 'june', email: 'junwo.ki6700@vusd.us', email_verified: true }
     const db = getFirestore(myAuth)
