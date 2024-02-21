@@ -2,21 +2,26 @@ rules_version = '2';
 
 service cloud.firestore {
   match /databases/{database}/documents {
+    allow read, delete, create, update: if false // rejects all permission by default
     // Define rules for the "partners" collection
     match /partners/{docId} {
-      allow read: if IsVerifiedVusdEmail()
-      allow delete: if IsVerifiedVusdEmail()&& IsModerator()
+      allow read: if IsVerifiedVusdEmail() // allow user to read if they are Vusd email (school email)
+      allow delete: if IsVerifiedVusdEmail() && IsModerator() // allow the user to read if they are a moderator and vusd email
       allow create, update: if isValidPartnerData(request.resource.data) && 
-      IsVerifiedVusdEmail() && IsModerator()
-      
+      IsVerifiedVusdEmail() && IsModerator() // allow update if it fulfills a requirement for delete and if it's valid input
+
+      // verifies if logged in user is vusd email
       function IsVerifiedVusdEmail(){
       return request.auth.token.email.matches('.*vusd[.]us$') &&
       request.auth.token.email_verified;
       }
+
+      // checks if the user is given permission to change documents for partners collection
       function IsModerator() {
       return request.auth.uid in get(/databases/$(database)/documents/roles/SuperModerator).data.id || 
       request.auth.uid in get(/databases/$(database)/documents/roles/Moderator).data.id
       }
+
       // Function to validate partner data
       function isValidPartnerData(data) {
         return isValidInput(data.name) &&
