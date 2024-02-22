@@ -3,53 +3,56 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Q&A Page</title>
+  <title>Connect CTE</title>
+  <link rel="icon" type="image/x-icon" href="asset/connect_cte.png">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand">Navigation bar</a>
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="help.html">Help<span class="sr-only">(current)</span></a>
-            </li>
-          </ul>
-          <ul class="navbar-nav nav-justified-right">
-            <li class="nav-item active">
-              <a id="userDetails"><span class="sr-only"></a>
-            </li>
-          </ul>
-          <section id="whenSignedOut" hidden="false">
-            <button id="signInBtn" class="btn btn-outline-primary">Sign in with Google</button>
-          </section>
-          <section id="whenSignedIn" hidden="true">
-            <button type="button" id=signOutBtn class="btn btn-outline-primary">Sign Out</button>
-          </section>
-        </ul>
-      </nav>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">
+      <img id="logo" src="asset/logo-only.png" width="35" height="35" class="d-inline-block align-top">
+      Connect CTE
+    </a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="help.html">Help<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-justified-right">
+        <li class="nav-item active">
+          <a id="userDetails"><span class="sr-only"></a>
+        </li>
+      </ul>
+      <section id="whenSignedOut" hidden="false">
+        <button id="signInBtn" class="btn btn-outline-primary">Sign in with Google</button>
+      </section>
+      <section id="whenSignedIn" hidden="true">
+        <button type="button" id=signOutBtn class="btn btn-outline-primary">Sign Out</button>
+      </section>
+    </ul>
+  </nav>
     
 
 <div class="container mt-5">
-  <h1 class="text-center mb-4">Questions & Answers</h1>
-
+  <h1 class="text-center mb-4">Frequently asked Q&A</h1>
   <div class="accordion" id="accordionExample">
     <div class="card">
       <div class="card-header" id="headingOne">
         <h2 class="mb-0">
           <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            Question 1: What is Lorem Ipsum?
+            How do I add a new partner?
           </button>
         </h2>
       </div>
 
       <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
         <div class="card-body">
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry.
+          If you are a moderator, find the blue button that says “add partner” and click it. There you can type the information needed like the name of the business, their contact information, and more!
         </div>
       </div>
     </div>
@@ -58,13 +61,13 @@
       <div class="card-header" id="headingTwo">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            Question 2: Why do we use it?
+            How can I sort the business and community partners?
           </button>
         </h2>
       </div>
       <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
         <div class="card-body">
-          It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+          Click on the column like “name” or “type” to choose how the partners will be sorted based on the particular detail clicked. Clicking it again will change the sorting from ascending to descending          
         </div>
       </div>
     </div>
@@ -73,18 +76,49 @@
       <div class="card-header" id="headingThree">
         <h2 class="mb-0">
           <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            Question 3: Where does it come from?
+            How do you search on the table?
           </button>
         </h2>
       </div>
       <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
         <div class="card-body">
-          Contrary to popular belief, Lorem Ipsum is not simply random text.
+          Find the search bar on the front page with the word “Search…” in the text box. Type any letters or numbers you would like to filter from the business and community partners list. You don't need to hit enter as it is live search!
         </div>
       </div>
     </div>
+
+
+  <div class="card">
+    <div class="card-header" id="headingThree">
+      <h2 class="mb-0">
+        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+          How do I filter table by type or section?
+        </button>
+      </h2>
+    </div>
+    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+      <div class="card-body">
+        Find the drop-down menu near the top of the front page with the word “type” to filter by type or “section” to filter by section. From there, click on one of the types to filter by or sections to filter by.       </div>
+    </div>
   </div>
 </div>
+
+<div class="card">
+  <div class="card-header" id="headingThree">
+    <h2 class="mb-0">
+      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+        How do I reset the filters?
+      </button>
+    </h2>
+  </div>
+  <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+    <div class="card-body">
+      Find the blue button with that says “reset” and click it to reset the filters you set on the list. 
+    </div>
+  </div>
+</div>
+</div>
+
 
 <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

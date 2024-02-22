@@ -31,6 +31,9 @@ body {
 .btn-primary:hover{
     background-color: #0069d9;
 }
+.img {
+    margin: 0 auto;
+}
 .header {
     display: flex;
     justify-content: space-between;
@@ -111,10 +114,12 @@ h2 {
 
 .navbar-brand{
     font-size: 1.4rem;
-    margin-right: 2rem
+    margin-right: 1.5rem;
+    font-weight: bold;
 }
 .nav-link {
     font-size: 1.3rem;
+    margin-right: 1.5rem;
 }
 
 #userDetails {
@@ -123,6 +128,9 @@ h2 {
     margin-right: 1.4rem;
     color:antiquewhite;
     font-weight: bold;
+}
+#logo {
+    margin-right: 1.3rem;
 }
 #sectorFilter,
 #typeFilter {
