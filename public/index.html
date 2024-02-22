@@ -9,14 +9,29 @@
 </head>
 <body>
 
-<section id="whenSignedOut" class="container text-right" hidden="false">
-  <button id="signInBtn" class="btn btn-primary mt-3">Sign in with Google</button>
-</section>
-
-<section id="whenSignedIn" class="container text-right" hidden="true">
-  <div id="userDetails"></div>
-  <button id="signOutBtn" class="btn btn-primary mt-3">Sign Out</button>
-</section>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand">Navigation bar</a>
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="help.html">Help<span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <ul class="navbar-nav nav-justified-right">
+        <li class="nav-item active">
+          <a id="userDetails"><span class="sr-only"></a>
+        </li>
+      </ul>
+      <section id="whenSignedOut" hidden="false">
+        <button id="signInBtn" class="btn btn-outline-primary">Sign in with Google</button>
+      </section>
+      <section id="whenSignedIn" hidden="true">
+        <button type="button" id=signOutBtn class="btn btn-outline-primary">Sign Out</button>
+      </section>
+    </ul>
+  </nav>
 
 
 <div class="container mt-5">

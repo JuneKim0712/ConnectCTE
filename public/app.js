@@ -47,7 +47,7 @@ elements.thingsList.addEventListener('click', handleListClick)
 auth.onAuthStateChanged(user => {
   elements.whenSignedIn.hidden = !user
   elements.whenSignedOut.hidden = user
-  elements.userDetails.innerHTML = user ? `<h3>Hello ${user.displayName}!</h3>` : ''
+  elements.userDetails.innerHTML = user ? `${user.displayName}` : ''
 })
 
 // Render partners
@@ -64,8 +64,8 @@ const renderPartners = partners => {
             <td>${partner.address}</td>
             <td>${partner.date}</td>
             <td id="actionBtn">
-                <button class="btn btn-danger btn-primary editBtn" data-id="${partner.id}">Edit</button>
-                <button class="btn btn-danger btn-secondary deleteBtn" data-id="${partner.id}">Delete</button>
+                <button class="btn btn-primary" data-id="${partner.id}">Edit</button>
+                <button class="btn btn-danger" data-id="${partner.id}">Delete</button>
             </td>
         </tr>
     `).join('')
