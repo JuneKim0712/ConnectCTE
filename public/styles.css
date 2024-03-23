@@ -55,6 +55,8 @@ h2 {
     color: #333;
 }
 
+h3 {white-space: nowrap;}
+
 .btn {
     padding: 8px 16px; /* Reduced padding */
     font-size: 16px;
