@@ -189,5 +189,3 @@ This project is protected under the [GPL-3.0](https://choosealicense.com/license
 ##  Acknowledgments
 
 - List any resources, contributors, inspiration, etc. here.
-
----
