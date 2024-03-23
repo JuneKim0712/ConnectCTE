@@ -2,10 +2,10 @@
   <img src="https://github.com/JuneKim0712/FBLA23/blob/main/public/asset/logo-only.png" width="100" />
 </p>
 <p align="center">
-    <h1 align="center">FBLA23</h1>
+    <h1 align="center">Connect CTE</h1>
 </p>
 <p align="center">
-    <em>FBLA23: Code with Quality, Deploy with Security.</em>
+    <em>Connect CTE: Code with Quality, Deploy with Security.</em>
 </p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/JuneKim0712/FBLA23?style=flat&color=0080ff" alt="license">
@@ -128,7 +128,14 @@ FBLA23 is a web application designed for Connect CTE partners to manage and acce
 
 ---
 
+## Website URL
+[fbla23jk.web.app](https://fbla23jk.web.app/index.html)
+
+---
+
 ##  Getting Started
+
+If you want to make changes to the code:
 
 ***Requirements***
 
