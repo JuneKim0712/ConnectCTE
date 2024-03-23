@@ -27,12 +27,8 @@ const dbReference = db.collection('partners')
 let currentSortColumn = 'name'
 let currentSortDirection = 'asc'
 
-// Firebase Auth & Providers
-const provider = new firebase.auth.GoogleAuthProvider()
-
 // Event listeners
-elements.signInBtn.onclick = () => auth.signInWithRedirect(provider)
-elements.signOutBtn.onclick = () => auth.signOut().then(location.reload())
+elements.signOutBtn.onclick = () => auth.signOut().then(window.location.href = '/home.html')
 elements.addPartnerBtn.addEventListener('click', () => elements.partnerModal.modal('show'))
 elements.partnerModal.on('hidden.bs.modal', () => elements.partnerForm.reset())
 elements.submitPartnerBtn.addEventListener('click', handleFormSubmission)
@@ -45,10 +41,12 @@ elements.thingsList.addEventListener('click', handleListClick)
 
 // Authentication state change
 auth.onAuthStateChanged(user => {
-  elements.whenSignedIn.hidden = !user
-  elements.whenSignedOut.hidden = user
-  elements.userDetails.innerHTML = user ? `${user.displayName}` : ''
-})
+  if (user) {
+    elements.userDetails.innerHTML = `<h3>Hello ${user.displayName}!</h3>`
+    elements.whenSignedIn.hidden = false
+  }
+}
+)
 
 // Render partners
 const renderPartners = partners => {

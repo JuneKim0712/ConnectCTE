@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Welcome to Firebase Hosting</title>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <!-- Include custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand">
+          <img id="logo" src="asset/logo-only.png" width="35" height="35" class="d-inline-block align-top">
+          Connect CTE
+        </a>
+          </ul>
+          <ul class="navbar-nav nav-justified-right">
+            <li class="nav-item active">
+              <a id="userDetails"><span class="sr-only"></a>
+            </li>
+          </ul>
+        </ul>
+      </nav>
+      <section id="whenSignedOut" hidden="false">
+        <button id="signInBtn" class="btn btn-outline-primary">Sign in with Google</button>
+      </section>
+<script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
+<script defer src="/__/firebase/10.8.0/firebase-functions-compat.js"></script>
+<script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<script defer src="script.js"></script>
+</body>
+</html>
