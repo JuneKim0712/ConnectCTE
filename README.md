@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/JuneKim0712/FBLA23/public/asset/connect_cte.png" width="100" />
+  <img src="https://github.com/JuneKim0712/FBLA23/blob/main/public/asset/logo-only.png" width="100" />
 </p>
 <p align="center">
     <h1 align="center">FBLA23</h1>
