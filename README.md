@@ -23,7 +23,9 @@
 	<img src="https://img.shields.io/badge/ESLint-4B32C3.svg?style=flat&logo=ESLint&logoColor=white" alt="ESLint">
 	<img src="https://img.shields.io/badge/Ajv-23C8D2.svg?style=flat&logo=Ajv&logoColor=white" alt="Ajv">
 	<img src="https://img.shields.io/badge/JSON-000000.svg?style=flat&logo=JSON&logoColor=white" alt="JSON">
-    <img src="https://img.shields.io/badge/Bootstrap-563D7C?&logo=bootstrap&logoColor=white" alt="JSON">
+    	<img src="https://img.shields.io/badge/Bootstrap-563D7C?&logo=bootstrap&logoColor=white" alt="Bootrap">
+	<img src="https://img.shields.io/badge/Vscode-007ACC?&logo=visualstudiocode&logoColor=white" alt="Vscode">
+
 </p>
 <hr>
 
