@@ -43,7 +43,7 @@
 
 ##  Overview
 
-FBLA23 is a web application designed for Connect CTE partners to manage and access crucial data efficiently. Utilizing Firebase for user authentication and Firestore for database management, the platform ensures secure operations for verified users based on their roles, maintaining data integrity and access control. The project focuses on showcasing user-friendly interfaces and seamless user experiences, with features like fetching server items for dynamic content, managing database indexes for optimal performance, and handling user authentication seamlessly. By combining a robust backend architecture with polished frontend elements like CSS styling and interactive UI components, FBLA23 offers a valuable solution for partners to engage with Connect CTE resources effortlessly.
+Connect CTE is a web application designed for Connect CTE partners to manage and access crucial data efficiently. Utilizing Firebase for user authentication and Firestore for database management, the platform ensures secure operations for verified users based on their roles, maintaining data integrity and access control. The project focuses on showcasing user-friendly interfaces and seamless user experiences, with features like fetching server items for dynamic content, managing database indexes for optimal performance, and handling user authentication seamlessly. By combining a robust backend architecture with polished frontend elements like CSS styling and interactive UI components, Connect CTE offers a valuable solution for partners to engage with Connect CTE resources effortlessly.
 
 ---
 
