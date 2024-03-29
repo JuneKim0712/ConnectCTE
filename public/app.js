@@ -214,7 +214,6 @@ function addPartner (dbReference, name, type, sector, resources, individual, ema
     date
   })
 }
-
 // Reset form
 function handleReset () {
   document.getElementById('searchInput').value = ''
