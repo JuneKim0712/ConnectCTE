@@ -9,7 +9,6 @@ body {
     font-size: 16px;
     line-height: 1.6;
     color: #333;
-    background-color: #f8f9fa;
     overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
@@ -22,6 +21,7 @@ body {
     max-width: 90%; /* Increased max-width for wider container */
     margin: 0 auto;
     padding: 10px; /* Reduced padding */
+    white-space: nowrap;
 }
 
 .btn-primary {
