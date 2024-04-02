@@ -190,7 +190,7 @@ This project is protected under the [GPL-3.0](https://choosealicense.com/license
 ##  Acknowledgments
 The Connect CTE website was created entirely by Junwoo Kim and Gabriel Atienza. The website was developed through Visual Studio Code by Microsoft Corporation.
 
-The Logo of Connect CTE was created entirely by Gabriel Atienza using 
+The Logo of Connect CTE was created entirely by Gabriel Atienza using Canva Pty Ltd.
 
 Firebase by Alphabet Inc. was used to store the website's data, including information about the school's career and technical education department's business and community partners and permission to access individual email accounts.
 
@@ -198,7 +198,7 @@ Firebase, through Google Analytics for Firebase, may log user actions such as cl
                         
 Any analytical data collected on the user can not be used to identify the user in any way.                         
 
-The App does not question the user for any personal information and therefore does not log or store any personal information relating to the user locally or in an online backend.
+The App does not question the user for any personal information and does not log or store any personal information relating to the user locally or in an online backend.
 
 Firebase is a trademark of Google, LLC.
                         
