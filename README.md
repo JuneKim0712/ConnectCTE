@@ -187,7 +187,7 @@ This project is protected under the [GPL-3.0](https://choosealicense.com/license
 
 ---
 
-##  Acknowledgments
+##  Copyright Information
 The Connect CTE website was created entirely by Junwoo Kim and Gabriel Atienza. The website was developed through Visual Studio Code by Microsoft Corporation.
 
 The Logo of Connect CTE was created entirely by Gabriel Atienza using Canva Pty Ltd.
