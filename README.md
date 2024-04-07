@@ -7,7 +7,9 @@
 <p align="center">
     <em>Connect CTE: Store buissness and community partners data easily and safely.</em>
 </p>
-Website: fbla23jk.web.app
+<p align="center">
+    <em>Website: fbla23jk.web.app</em>
+</p>
 <p align="center">
 	<img src="https://img.shields.io/github/license/JuneKim0712/FBLA23?style=flat&color=0080ff" alt="license">
 	<img src="https://img.shields.io/github/last-commit/JuneKim0712/FBLA23?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
