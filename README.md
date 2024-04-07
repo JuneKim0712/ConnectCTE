@@ -92,7 +92,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 ##  Files
 
-<details closed><summary>.</summary>
+<summary>.</summary>
 
 | File                                                                                               | Summary                                                                                                                                                                                                                                                                                                                                         |
 | ---                                                                                                | ---                                                                                                                                                                                                                                                                                                                                             |
@@ -104,7 +104,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 </details>
 
-<details closed><summary>public</summary>
+<summary>public</summary>
 
 | File                                                                              | Summary                                                                                                                                                                                                                             |
 | ---                                                                               | ---                                                                                                                                                                                                                                 |
@@ -117,7 +117,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 </details>
 
-<details closed><summary>test</summary>
+<summary>test</summary>
 
 | File                                                                                          | Summary                                                                                                                                                                                                                                           |
 | ---                                                                                           | ---                                                                                                                                                                                                                                               |
