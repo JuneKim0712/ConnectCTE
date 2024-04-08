@@ -5,13 +5,11 @@
     <h1 align="center">Connect CTE</h1>
 </p>
 <p align="center">
-    <em>Connect CTE: Code with Quality, Deploy with Security.</em>
+    <em>Connect CTE: Store buissness and community partners data easily and safely.</em>
 </p>
 <p align="center">
-	<img src="https://img.shields.io/github/license/JuneKim0712/FBLA23?style=flat&color=0080ff" alt="license">
-	<img src="https://img.shields.io/github/last-commit/JuneKim0712/FBLA23?style=flat&logo=git&logoColor=white&color=0080ff" alt="last-commit">
-	<img src="https://img.shields.io/github/languages/top/JuneKim0712/FBLA23?style=flat&color=0080ff" alt="repo-top-language">
-<p>
+    <em>Website: fbla23jk.web.app</em>
+</p>
 <p align="center">
 		<em>Developed with the software and tools below.</em>
 </p>
@@ -94,7 +92,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 ##  Files
 
-<details closed><summary>.</summary>
+<summary>.</summary>
 
 | File                                                                                               | Summary                                                                                                                                                                                                                                                                                                                                         |
 | ---                                                                                                | ---                                                                                                                                                                                                                                                                                                                                             |
@@ -106,7 +104,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 </details>
 
-<details closed><summary>public</summary>
+<summary>public</summary>
 
 | File                                                                              | Summary                                                                                                                                                                                                                             |
 | ---                                                                               | ---                                                                                                                                                                                                                                 |
@@ -119,7 +117,7 @@ Connect CTE is a web application designed for Connect CTE partners to manage and
 
 </details>
 
-<details closed><summary>test</summary>
+<summary>test</summary>
 
 | File                                                                                          | Summary                                                                                                                                                                                                                                           |
 | ---                                                                                           | ---                                                                                                                                                                                                                                               |
@@ -187,10 +185,10 @@ This project is protected under the [GPL-3.0](https://choosealicense.com/license
 
 ---
 
-##  Acknowledgments
+##  Copyright Information
 The Connect CTE website was created entirely by Junwoo Kim and Gabriel Atienza. The website was developed through Visual Studio Code by Microsoft Corporation.
 
-The Logo of Connect CTE was created entirely by Gabriel Atienza using 
+The Logo of Connect CTE was created entirely by Gabriel Atienza using Canva Pty Ltd.
 
 Firebase by Alphabet Inc. was used to store the website's data, including information about the school's career and technical education department's business and community partners and permission to access individual email accounts.
 
@@ -198,7 +196,7 @@ Firebase, through Google Analytics for Firebase, may log user actions such as cl
                         
 Any analytical data collected on the user can not be used to identify the user in any way.                         
 
-The App does not question the user for any personal information and therefore does not log or store any personal information relating to the user locally or in an online backend.
+The App does not question the user for any personal information and does not log or store any personal information relating to the user locally or in an online backend.
 
 Firebase is a trademark of Google, LLC.
                         
