@@ -9,6 +9,26 @@ section {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
 }
+#discription {
+  font-style:oblique;
+  color: orange;
+  font-size: 3em;
+  white-space: nowrap;
+  margin: 0;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#discription2 {
+  font-size: 0.4em;
+}
+
+#discription3 {
+  font-size: 0.4em;
+}
 .gsi-material-button {
   -moz-user-select: none;
   -webkit-user-select: none;
