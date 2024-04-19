@@ -1,7 +1,7 @@
 const auth = firebase.auth()
 
 // Elements
-const signInBtn = document.querySelector('.gsi-material-button');
+const signInBtn = document.querySelector('.gsi-material-button')
 
 // Firebase Auth & Providers
 const provider = new firebase.auth.GoogleAuthProvider()

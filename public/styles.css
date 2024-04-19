@@ -37,14 +37,20 @@ body {
 .header {
     display: flex;
     justify-content: space-between;
-    align-items: center;
     margin-bottom: 10px; /* Reduced margin */
+}
+#addPartnerBtn, #importPartnerBtn, #downloadBtn {
+    margin-left: 1em;
 }
 /* Ensure sort indicator stays in the same line */
 .table th {
     white-space: nowrap; /* Prevent wrapping */
 }
 
+#importBody {
+    white-space: nowrap;
+    overflow-wrap: break-word;
+}
 #actionBtn {
     white-space: nowrap; /* Prevent wrapping */
 }

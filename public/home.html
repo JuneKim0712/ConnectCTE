@@ -33,12 +33,14 @@
       </section>
     </ul>
   </nav>
-
-
 <div class="container mt-5">
-  <div class="header d-flex justify-content-between align-items-center">
+  <div class="header">
     <h2>Business and Community Partners</h2>
+    <div id="headerBtns">
+    <button id="importPartnerBtn" class="btn btn-primary">Import</button>
+    <button id="downloadBtn" class="btn btn-primary">Export</button>
     <button id="addPartnerBtn" class="btn btn-primary">Add Partner</button>
+    </div>
   </div>
   <div class="search-container mb-3">
     <button id="resetBtn" class="btn btn-primary">Reset</button>
@@ -64,6 +66,22 @@
     <input type="text" id="searchInput" class="form-control ml-3" placeholder="Search...">
   </div>  
   <hr>
+  <div class="modal fade" tabindex="-1" role="dialog" id="importPartnerModal" aria-labelledby="partnerModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-body">
+        </div>
+        <div id="importBody" class="modal-body">
+          <h2> Choose csv file to import: </h2>
+          <input type="file" id="csvFileInput" accept=".csv" />
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+          <button id="submitPartnerBtn2" type="button" class="btn btn-primary" disabled="true">Import</button>
+        </div>
+      </div>
+    </div>
+  </div>
 <div class="modal fade" id="partnerModal" tabindex="-1" role="dialog" aria-labelledby="partnerModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">

@@ -8,14 +8,19 @@ const elements = {
   userDetails: document.getElementById('userDetails'),
   tableHeaders: document.querySelectorAll('th'),
   partnerModal: $('#partnerModal'),
+  importPartnerModal: $('#importPartnerModal'),
+  submitPartnerBtn: document.getElementById('submitPartnerBtn'),
+  importPartnerBtn: document.getElementById('importPartnerBtn'),
   partnerForm: document.getElementById('partnerForm'),
   searchInput: document.getElementById('searchInput'),
   typeFilter: document.getElementById('typeFilter'),
   sectorFilter: document.getElementById('sectorFilter'),
   addPartnerBtn: document.getElementById('addPartnerBtn'),
-  submitPartnerBtn: document.getElementById('submitPartnerBtn'),
+  submitPartnerBtn2: document.getElementById('submitPartnerBtn2'),
   resetBtn: document.getElementById('resetBtn'),
-  thingsList: document.getElementById('thingsList')
+  thingsList: document.getElementById('thingsList'),
+  downloadBtn: document.getElementById('downloadBtn'),
+  csvFileInput: document.getElementById('csvFileInput')
 }
 
 // Firestore reference
@@ -25,18 +30,26 @@ const dbReference = db.collection('partners')
 let currentSortColumn = 'name'
 let currentSortDirection = 'asc'
 
-// Event listeners
-elements.signOutBtn.onclick = () => auth.signOut().then(window.location.href = '/index.html')
-elements.addPartnerBtn.addEventListener('click', () => elements.partnerModal.modal('show'))
-elements.partnerModal.on('hidden.bs.modal', () => elements.partnerForm.reset())
-elements.submitPartnerBtn.addEventListener('click', handleFormSubmission)
-elements.resetBtn.addEventListener('click', handleReset)
-elements.typeFilter.addEventListener('change', doesInputExist)
-elements.sectorFilter.addEventListener('change', doesInputExist)
-elements.searchInput.addEventListener('input', doesInputExist)
-elements.tableHeaders.forEach(header => header.addEventListener('click', handleSorting))
-elements.thingsList.addEventListener('click', handleListClick)
+// Partner list
+let partnerData = null
 
+// Event listeners
+window.addEventListener('DOMContentLoaded', (event) => {
+  elements.signOutBtn.onclick = () => auth.signOut().then(window.location.href = '/index.html')
+  elements.addPartnerBtn.addEventListener('click', () => elements.partnerModal.modal('show'))
+  elements.importPartnerBtn.addEventListener('click', () => elements.importPartnerModal.modal('show'))
+  elements.submitPartnerBtn2.addEventListener('click', importPartner)
+  elements.csvFileInput.addEventListener('change', () => { elements.submitPartnerBtn2.disabled = false })
+  elements.partnerModal.on('hidden.bs.modal', () => elements.partnerForm.reset())
+  elements.submitPartnerBtn.addEventListener('click', handleFormSubmission)
+  elements.resetBtn.addEventListener('click', handleReset)
+  elements.typeFilter.addEventListener('change', doesInputExist)
+  elements.sectorFilter.addEventListener('change', doesInputExist)
+  elements.searchInput.addEventListener('input', doesInputExist)
+  elements.tableHeaders.forEach(header => header.addEventListener('click', handleSorting))
+  elements.thingsList.addEventListener('click', handleListClick)
+  elements.downloadBtn.addEventListener('click', download)
+})
 // Authentication state change
 auth.onAuthStateChanged(user => {
   if (user) {
@@ -47,6 +60,11 @@ auth.onAuthStateChanged(user => {
 
 // Render partners
 const renderPartners = partners => {
+  const data = partners.map(item => {
+    const { id, ...rest } = item
+    return rest
+  })
+  partnerData = data
   elements.thingsList.innerHTML = partners.map(partner => `
         <tr>
             <td>${partner.name}</td>
@@ -214,6 +232,16 @@ function addPartner (dbReference, name, type, sector, resources, individual, ema
     date
   })
 }
+
+function importPartner () {
+  csvToJson(elements.csvFileInput).then(result => {
+    dbReference.get()
+      .then(() => result.forEach(partner => addPartner(dbReference, partner.name, partner.type, partner.sector, partner.resources, 
+        partner.individual, partner.email, partner.phone, partner.address, partner.date)))
+      .catch(error => console.error('Error adding documents:', error))
+  })
+}
+
 // Reset form
 function handleReset () {
   document.getElementById('searchInput').value = ''
@@ -282,6 +310,62 @@ function doesInputExist () {
     }
     unsubWNoInput = fetchAndRenderPartners()
   }
+}
+
+function download () {
+  const header = Object.keys(partnerData[0])
+  const headerString = header.join(',')
+  const replacer = (key, value) => value ?? ''
+  const rowItems = partnerData.map((row) =>
+    header
+      .map((fieldName) => JSON.stringify(row[fieldName], replacer))
+      .join(',')
+  )
+  const csv = [headerString, ...rowItems].join('\r\n')
+  const blob = new Blob([csv], { type: 'text/csv' })
+  const url = window.URL.createObjectURL(blob)
+  const a = document.createElement('a')
+  a.setAttribute('href', url)
+  a.setAttribute('download', 'download.csv')
+  a.click()
+}
+
+function csvToJson (csvFileInput) {
+  return new Promise((resolve, reject) => {
+    const file = csvFileInput.files[0]
+    const reader = new FileReader()
+
+    reader.onload = function (event) {
+      const csvData = event.target.result
+      const jsonData = parseCsvToJson(csvData)
+      resolve(jsonData)
+    }
+
+    reader.onerror = function () {
+      reject('Error reading CSV file.')
+    }
+
+    reader.readAsText(file)
+  })
+}
+
+function parseCsvToJson (csvData) {
+  const rows = csvData.trim().split('\n')
+  const headers = rows[0].split(',')
+  const jsonData = []
+
+  for (let i = 1; i < rows.length; i++) {
+    const values = rows[i].split(',')
+    const obj = {}
+
+    for (let j = 0; j < headers.length; j++) {
+      obj[headers[j].trim()] = values[j].trim()
+    }
+
+    jsonData.push(obj)
+  }
+
+  return jsonData
 }
 
 // Update sort indicators
