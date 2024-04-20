@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: Arial, sans-serif, 'Playfair Display';
     font-size: 1em;
     line-height: 1.6;
     color: #333;
@@ -18,9 +20,9 @@ body {
 
 
 .container {
-    max-width: 90%; /* Increased max-width for wider container */
+    max-width: 90%;
     margin: 0 auto;
-    padding: 10px; /* Reduced padding */
+    padding: 10px; 
     white-space: nowrap;
 }
 
@@ -90,7 +92,7 @@ h3 {white-space: nowrap;}
 }
 
 .table {
-    width: 90%; /* Make table width 100% */
+    width: 100%;
     border-collapse: collapse;
 }
 
@@ -123,10 +125,11 @@ h3 {white-space: nowrap;}
     color: #333;
 }
 
+
+
 .navbar-brand{
     font-size: 1.4rem;
     margin-right: 1.5rem;
-    font-weight: bold;
 }
 .nav-link {
     font-size: 1.3rem;

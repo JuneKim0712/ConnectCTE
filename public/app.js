@@ -234,9 +234,10 @@ function addPartner (dbReference, name, type, sector, resources, individual, ema
 }
 
 function importPartner () {
+  elements.importPartnerModal.modal('hide')
   csvToJson(elements.csvFileInput).then(result => {
     dbReference.get()
-      .then(() => result.forEach(partner => addPartner(dbReference, partner.name, partner.type, partner.sector, partner.resources, 
+      .then(() => result.forEach(partner => addPartner(dbReference, partner.name, partner.type, partner.sector, partner.resources,
         partner.individual, partner.email, partner.phone, partner.address, partner.date)))
       .catch(error => console.error('Error adding documents:', error))
   })
@@ -340,11 +341,6 @@ function csvToJson (csvFileInput) {
       const jsonData = parseCsvToJson(csvData)
       resolve(jsonData)
     }
-
-    reader.onerror = function () {
-      reject('Error reading CSV file.')
-    }
-
     reader.readAsText(file)
   })
 }
