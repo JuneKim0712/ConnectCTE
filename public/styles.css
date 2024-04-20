@@ -36,14 +36,37 @@ body {
 .img {
     margin: 0 auto;
 }
+#editBtn, #submitBtn {
+    border-radius: 0px;
+}
+
+.editBtn {
+    background-color: #4a6d9e;
+    border-color: #4a6d9e;
+}
+
+#tableName {
+    font-weight: 700;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px; /* Reduced margin */
 }
 #addPartnerBtn, #importPartnerBtn, #downloadBtn {
+    font-family: "Playfair Display";
+    font-weight: 600;
+    background-color: #495057;
+    border-radius: 0px;
     margin-left: 1em;
+    transition-duration: 0.4s;
 }
+
+#addPartnerBtn:hover, #importPartnerBtn:hover, #downloadBtn:hover {
+    background-color: #333;
+}
+
 /* Ensure sort indicator stays in the same line */
 .table th {
     white-space: nowrap; /* Prevent wrapping */
@@ -77,13 +100,16 @@ h3 {white-space: nowrap;}
     transition: background-color 0.3s ease;
 }
 
+.deleteBtn {
+    background-color: #9e4a4a;
+    border-color: #9e4a4a;
+}
 
 .close-btn {
     padding: 8px 16px; /* Reduced padding */
     font-size: 16px;
     font-weight: 700;
     color: #fff;
-    background-color: #dc3545; /* Red color */
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -91,7 +117,7 @@ h3 {white-space: nowrap;}
 }
 
 .close-btn:hover {
-    background-color: #c82333; /* Darker red color on hover */
+    background-color: lightsalmon; /* Darker red color on hover */
 }
 
 .table {
@@ -101,6 +127,7 @@ h3 {white-space: nowrap;}
 
 .table th, .table td {
     font-family: "JetBrans Mono";
+    font-weight: 500;
     max-width: 15em;
     overflow-wrap: break-word;
     white-space: pre-wrap;
@@ -110,7 +137,6 @@ h3 {white-space: nowrap;}
 
 .table th {
     background-color: #f8f9fa;
-    font-weight: 700;
     text-align: left;
 }
 
@@ -146,10 +172,17 @@ h3 {white-space: nowrap;}
     font-weight: 500;
     font-size: 1.3rem;
     margin-right: 1.5rem;
+    transition-duration: 0.4s;
+}
+
+.nav-link:hover {
+    background-color: #333;
+    text-decoration: underline; /* Underline the text on hover */
 }
 
 #userDetails {
     text-align: center;
+    font-family: "playfair Display";
     font-size: 1.4rem;
     margin-right: 1.4rem;
     color:antiquewhite;
@@ -210,15 +243,11 @@ h3 {white-space: nowrap;}
 }
 
 .btn-secondary {
-    background-color: red;
-    border-color: red;
+    background-color: #FF6961;
+    border: 0px;
     padding: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: darkred;
-    border-color: darkred;
-}
 
 
 

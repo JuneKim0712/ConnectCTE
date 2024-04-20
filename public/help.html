@@ -4,9 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Connect CTE</title>
-  <link rel="icon" type="image/x-icon" href="asset/connect_cte.png">
+  <link defer rel="icon" type="image/x-icon" href="asset/connect_cte.png">
+  <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/faqs/faq-3/assets/css/faq-3.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="styles.css">
+  
+
 </head>
 <body>
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
@@ -15,11 +20,11 @@
       Connect CTE
     </a>
       <ul class="navbar-nav mr-auto">
-        <li class="nav-item active" id="home" >
-          <a class="nav-link" href="home.html">Home<span class="sr-only">(current)</span></a>
+        <li class="nav-item active">
+          <a class="nav-link" href="home.html">Home</a>
         </li>
         <li class="nav-item active">
-          <a class="nav-link" href="help.html">Help<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="help.html">Help</a>
         </li>
       </ul>
       <ul class="navbar-nav nav-justified-right">
@@ -32,81 +37,162 @@
       </section>
     </ul>
   </nav>
-    
-
-<div class="container mt-5">
-  <h1 class="text-center mb-4">Frequently asked Q&A</h1>
-  <div class="accordion" id="accordionExample">
-    <div class="card">
-      <div class="card-header" id="headingOne">
-        <h2 class="mb-0">
-          <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-            How do I add a new partner?
-          </button>
-        </h2>
+<section class="bsb-faq-3 py-3 py-md-5 py-xl-8">
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
+        <h2 class="mb-4 display-5 text-center">Frequently Asked Questions</h2>
+        <p class="text-secondary text-center lead fs-4">Welcome to our FAQ page, your one-stop resource for answers to commonly asked questions.</p>
+        <p class="mb-5 text-center">For a CTE member looking to seek clarification on specific topics, this page has clear and concise information about our website.</p>
+        <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
       </div>
-
-      <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
-        <div class="card-body">
-          If you are a moderator, find the blue button that says “add partner” and click it. There you can type the information needed like the name of the business, their contact information, and more!
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" id="headingTwo">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-            How can I sort the business and community partners?
-          </button>
-        </h2>
-      </div>
-      <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
-        <div class="card-body">
-          Click on the column like “name” or “type” to choose how the partners will be sorted based on the particular detail clicked. Clicking it again will change the sorting from ascending to descending          
-        </div>
-      </div>
-    </div>
-
-    <div class="card">
-      <div class="card-header" id="headingThree">
-        <h2 class="mb-0">
-          <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-            How do you search on the table?
-          </button>
-        </h2>
-      </div>
-      <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-        <div class="card-body">
-          Find the search bar on the front page with the word “Search…” in the text box. Type any letters or numbers you would like to filter from the business and community partners list. You don't need to hit enter as it is live search!
-        </div>
-      </div>
-    </div>
-
-
-  <div class="card">
-    <div class="card-header" id="headingThree">
-      <h2 class="mb-0">
-        <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-          How do I filter table by type or section?
-        </button>
-      </h2>
-    </div>
-    <div id="collapseFour" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-      <div class="card-body">
-        Find the drop-down menu near the top of the front page with the word “type” to filter by type or “section” to filter by section. From there, click on one of the types to filter by or sections to filter by.       </div>
     </div>
   </div>
-</div>
 
-<div class="card">
-  <div class="card-header" id="headingThree">
-    <h2 class="mb-0">
-      <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-        How do I reset the filters?
-      </button>
-    </h2>
+  <!-- FAQs: My Account -->
+  <div class="mb-8">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-xl-10">
+          <div class="d-flex align-items-end mb-5">
+            <i class="bi bi-search me-3 lh-1 display-5"></i>
+            <h3 class="m-0">Search, filter and sort</h3>
+          </div>
+        </div>
+        <div class="col-11 col-xl-10">
+          <div class="accordion accordion-flush" id="faqAccount">
+            <div class="accordion-item bg-transparent border-top border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading1">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse1" aria-expanded="false" aria-controls="faqAccountCollapse1">
+                  How do I search?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse1" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading1">
+                <div class="accordion-body">
+                  <p>You can search by clicking on search bar and type what you want to search, from there the result will show up in real time.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading2">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse2" aria-expanded="false" aria-controls="faqAccountCollapse2">
+                  How do I filter out the business partners?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse2" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading2">
+                <div class="accordion-body">
+                  <p>To filter press "Filter By Type" or/and "Filter By Sector" and select catergory you want to filter, then the result will be shown.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading3">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse3" aria-expanded="false" aria-controls="faqAccountCollapse3">
+                  How do I sort the table?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse3" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading3">
+                <div class="accordion-body">
+                  <p>To sort press the index of the table (e.g. name, type, sector) and the table with sort from ascending order of the index, press again to make the table sort in descending order.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading4">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse4" aria-expanded="false" aria-controls="faqAccountCollapse4">
+                  How do I reset the filters?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse4" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading4">
+                <div class="accordion-body">
+                  <p>Find the button with that says “reset” and click it to reset the filters you set on the list.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading5">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse5" aria-expanded="false" aria-controls="faqAccountCollapse5">
+                  How do I manually add buissness partner?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse5" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading5">
+                <div class="accordion-body">
+                  <p>Press Add Partner to manually type in the information for buissness partner.</p>                
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqAccountHeading6">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqAccountCollapse6" aria-expanded="false" aria-controls="faqAccountCollapse5">
+                  Can I import/export buissness paratners data into csv file?
+                </button>
+              </h2>
+              <div id="faqAccountCollapse6" class="accordion-collapse collapse" aria-labelledby="faqAccountHeading6">
+                <div class="accordion-body">
+                  <p>Press Import button and choose csv file you want to input and press submit to import the data, and press export to download csv file of the partner's data.</p>                
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
+  <!-- FAQs: Placing an Order -->
+  <div class="mb-8">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-11 col-xl-10">
+          <div class="d-flex align-items-end mb-5">
+            <i class="bi bi-shield-check me-3 lh-1 display-5"></i>
+            <h3 class="m-0">Data Security</h3>
+          </div>
+        </div>
+        <div class="col-11 col-xl-10">
+          <div class="accordion accordion-flush" id="faqOrder">
+            <div class="accordion-item bg-transparent border-top border-bottom py-3">
+              <h2 class="accordion-header" id="faqOrderHeading1">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqOrderCollapse1" aria-expanded="false" aria-controls="faqOrderCollapse1">
+                  How do I logout my account in the website?
+                </button>
+              </h2>
+              <div id="faqOrderCollapse1" class="accordion-collapse collapse" aria-labelledby="faqOrderHeading1">
+                <div class="accordion-body">
+                  <p>You can logout of your account by clicking logout button in upper right corner next to your name.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqOrderHeading2">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqOrderCollapse2" aria-expanded="false" aria-controls="faqOrderCollapse2">
+                  What is a moderator and super moderator?
+                </button>
+              </h2>
+              <div id="faqOrderCollapse2" class="accordion-collapse collapse" aria-labelledby="faqOrderHeading2">
+                <div class="accordion-body">
+                  <p>Moderator can add, edit, delete the buissness partner's data and super moderator can do the same as moderator with add, delete, and edit of permission of moderator.</p>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item bg-transparent border-bottom py-3">
+              <h2 class="accordion-header" id="faqOrderHeading3">
+                <button class="accordion-button collapsed bg-transparent fw-bold shadow-none link-primary" type="button" data-bs-toggle="collapse" data-bs-target="#faqOrderCollapse3" aria-expanded="false" aria-controls="faqOrderCollapse3">
+                  How can I trust that data is being stored securely?
+                </button>
+              </h2>
+              <div id="faqOrderCollapse3" class="accordion-collapse collapse" aria-labelledby="faqOrderHeading3">
+                <div class="accordion-body">
+                  <p>The database is in google data storage, one of most invulnerable database and we made the database to take backups every day.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
+</section>
   <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
     <div class="card-body">
       Find the blue button with that says “reset” and click it to reset the filters you set on the list. 
@@ -114,28 +200,38 @@
   </div>
 </div>
 </div>
-
-<div>
-<iframe
-id="JotFormIFrame-241098834239161"
-title="Clubhouse Question Submit Form"
-onload="window.parent.scrollTo(0,0)"
-allowtransparency="true"
-allow="geolocation; microphone; camera; fullscreen"
-src="https://form.jotform.com/241098834239161"
-frameborder="0"
-style="min-width:100%;max-width:100%;height:539px;border:none;"
-scrolling="no"
->
-</iframe>
-<script src='https://form.jotform.com/s/umd/latest/for-form-embed-handler.js'></script>
-<script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-241098834239161'", "https://form.jotform.com/")</script>
+<div class="container mt-5" id="response" hidden>
+  <h2>Your Question is successfully submitted!</h2>
+  <h4>Please wait for 1-2 days to respond to your question. Answer will be sent to your email.
+  </h4>
 </div>
-
+<div class="container mt-5" id="Questionaire">
+  <h2>If You Have Question That Is Not In The FAQ, Let Us Know!</h2>
+  <form id="questionForm">
+      <div class="mb-3">
+          <label for="userQuestion" class="form-label">Type your question</label>
+          <textarea type="text" class="form-control" id="userQuestion" placeholder="Enter your question here" required></textarea>
+      </div>
+      <div class="mb-3">
+          <button type="submit" class="btn btn-primary">Submit</button>
+      </div>
+  </form>
+</div>
+<br><br><br><br><br>
+<script>
+      document.getElementById('questionForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const userQuestion = document.getElementById('userQuestion').value;
+        document.getElementById('userQuestion').value = '';
+        document.getElementById('Questionaire').hidden = true;
+        document.getElementById('response').hidden = false;
+    });
+</script>
 <script defer src="/__/firebase/10.8.0/firebase-app-compat.js"></script>
 <script defer src="/__/firebase/10.8.0/firebase-auth-compat.js"></script>
 <script defer src="/__/firebase/10.8.0/firebase-firestore-compat.js"></script>
 <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+<script src="https://unpkg.com/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 <script defer src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>

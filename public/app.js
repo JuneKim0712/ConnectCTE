@@ -67,7 +67,7 @@ const renderPartners = partners => {
   partnerData = data
   elements.thingsList.innerHTML = partners.map(partner => `
         <tr>
-            <td>${partner.name}</td>
+            <td id="tableName">${partner.name}</td>
             <td>${partner.type}</td>
             <td>${partner.sector}</td>
             <td>${partner.resources}</td>
@@ -77,8 +77,8 @@ const renderPartners = partners => {
             <td>${partner.address}</td>
             <td>${partner.date}</td>
             <td id="actionBtn">
-                <button class="btn btn-primary editBtn" data-id="${partner.id}">Edit</button>
-                <button class="btn btn-danger deleteBtn" data-id="${partner.id}">Delete</button>
+                <button class="btn btn-primary editBtn" id="editBtn" data-id="${partner.id}">Edit</button>
+                <button class="btn btn-danger deleteBtn" id="submitBtn" data-id="${partner.id}">Delete</button>
             </td>
         </tr>
     `).join('')
