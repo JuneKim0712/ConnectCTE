@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -49,6 +49,9 @@ body {
     white-space: nowrap; /* Prevent wrapping */
 }
 
+#resetBtn {
+    border-radius: 0;
+}
 #importBody {
     white-space: nowrap;
     overflow-wrap: break-word;
@@ -97,7 +100,8 @@ h3 {white-space: nowrap;}
 }
 
 .table th, .table td {
-    max-width: 11em;
+    font-family: "JetBrans Mono";
+    max-width: 15em;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px; /* Reduced padding */
@@ -119,19 +123,27 @@ h3 {white-space: nowrap;}
 #searchInput {
     flex: 1;
     padding: 8px; /* Reduced padding */
-    border: 2px solid #007bff;
-    border-radius: 6px;
+    border: 0px;
+    border-bottom: 1px solid black;
+    border-radius: 0px;
     font-size: 1rem;
     color: #333;
 }
 
-
-
 .navbar-brand{
+    font-family: "Playfair Display";
+
     font-size: 1.4rem;
     margin-right: 1.5rem;
 }
+
+.thankyou-footer-wrapper{
+    display:none;
+}
+
 .nav-link {
+    font-family: "Playfair Display";
+    font-weight: 500;
     font-size: 1.3rem;
     margin-right: 1.5rem;
 }
@@ -150,8 +162,8 @@ h3 {white-space: nowrap;}
 #typeFilter {
     font-size: 1rem;
     flex: 0.15;
-    border: 2px solid #007bff;
-    border-radius: 6px;
+    border: 1px solid black;
+    border-radius: 0px;
 }
 #sectorFilter {
     width: 14%;
@@ -188,7 +200,8 @@ h3 {white-space: nowrap;}
 }
 
 .form-control {
-    border-radius: 5px;
+    border-radius: 0px;
+    border-color: black;
 }
 
 .modal-dialog {
@@ -207,3 +220,15 @@ h3 {white-space: nowrap;}
     border-color: darkred;
 }
 
+
+
+
+.form-control:focus {
+    color: #495057;
+    background-color: #fff;
+    border-color: black;
+    outline: 0;
+    box-shadow: none;
+    border-bottom: 1px solid blue;
+}
+  
