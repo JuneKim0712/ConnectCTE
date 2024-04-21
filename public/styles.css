@@ -11,19 +11,30 @@ body {
     font-size: 1em;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; /*Prevent horizontal scroll*/
 }
 
 .table-container thead{
     cursor: pointer; /* Change cursor to pointer when hovering over the data table */
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e5e5e5; /* Use your preferred color for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* Optionally, customize the color for even rows if desired */
+}
 
 .container {
     max-width: 90%;
     margin: 0 auto;
     padding: 10px; 
     white-space: nowrap;
+}
+
+.accordion-button, .accordion-body{
+    font-size: 20px;
 }
 
 .btn-primary {
@@ -132,12 +143,25 @@ h3 {white-space: nowrap;}
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px; /* Reduced padding */
-    border-bottom: 1px solid #dee2e6;
+    border: 1.2px solid white;
 }
-
 .table th {
     background-color: #f8f9fa;
     text-align: left;
+}
+
+.table td > input[type="checkbox"] {
+    max-width: 100em;
+    white-space: pre-wrap;
+    padding: 10px; /* Reduced padding */
+    border: 1.2px solid white;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Make the width match the cell width */
+    margin: auto; /* Center the checkbox */
 }
 
 .search-container {
@@ -260,4 +284,3 @@ h3 {white-space: nowrap;}
     box-shadow: none;
     border-bottom: 1px solid blue;
 }
-  

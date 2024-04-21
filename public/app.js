@@ -67,6 +67,7 @@ const renderPartners = partners => {
   partnerData = data
   elements.thingsList.innerHTML = partners.map(partner => `
         <tr>
+            <td hidden><input type="checkbox" value=""></td>
             <td id="tableName">${partner.name}</td>
             <td>${partner.type}</td>
             <td>${partner.sector}</td>
