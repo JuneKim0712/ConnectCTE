@@ -7,8 +7,8 @@ service cloud.firestore {
     match /partners/{docId} {
       allow read: if IsVerifiedVusdEmail() // allow user to read if they are Vusd email (school email)
       allow delete: if IsVerifiedVusdEmail() && IsModerator() // allow the user to read if they are a moderator and vusd email
-      allow create, update: if true // isValidPartnerData(request.resource.data) && 
-      // IsVerifiedVusdEmail() && IsModerator() // allow update if it fulfills a requirement for delete and if it's valid input
+      allow create, update: if isValidPartnerData(request.resource.data) && 
+      IsVerifiedVusdEmail() && IsModerator() // allow update if it fulfills a requirement for delete and if it's valid input
 
       // verifies if logged in user is vusd email
       function IsVerifiedVusdEmail(){

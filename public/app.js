@@ -383,9 +383,9 @@ unsubWNoInput = fetchAndRenderPartners()
 doesInputExist()
 updateSortIndicators()
 
-const icons = document.querySelectorAll('.icon');
-icons.forEach (icon => {  
+const icons = document.querySelectorAll('.icon')
+icons.forEach(icon => {
   icon.addEventListener('click', (event) => {
-    icon.classList.toggle("open");
-  });
-});
+    icon.classList.toggle('open')
+  })
+})
