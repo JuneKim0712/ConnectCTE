@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
   <link rel="stylesheet" href="https://unpkg.com/bs-brain@2.0.3/components/faqs/faq-3/assets/css/faq-3.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="help-style.css">
   
 
 </head>
@@ -37,20 +37,17 @@
       </section>
     </ul>
   </nav>
-<section class="bsb-faq-3 py-3 py-md-5 py-xl-8">
-  <div class="container">
+<section class="py-xl-8" id="qna">
+  <div class="container" id="qna">
     <div class="row justify-content-md-center">
-      <div class="col-12 col-md-10 col-lg-8 col-xl-7 col-xxl-6">
         <h2 class="mb-4 display-5 text-center">Frequently Asked Questions</h2>
         <p class="text-secondary text-center lead fs-4">Welcome to our FAQ page, your one-stop resource for answers to commonly asked questions.</p>
         <p class="mb-5 text-center">For a CTE member looking to seek clarification on specific topics, this page has clear and concise information about our website.</p>
         <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
-      </div>
     </div>
-  </div>
 
   <!-- FAQs: My Account -->
-  <div class="mb-8">
+  <div class="mb-8" id="qna">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-11 col-xl-10">
@@ -139,7 +136,7 @@
     </div>
   </div>
   <!-- FAQs: Placing an Order -->
-  <div class="mb-8">
+  <div class="mb-8" id="qna">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-11 col-xl-10">
@@ -191,32 +188,26 @@
       </div>
     </div>
   </div>
-  <hr class="w-50 mx-auto mb-5 mb-xl-9 border-dark-subtle">
-</section>
-  <div id="collapseFive" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
-    <div class="card-body">
-      Find the blue button with that says “reset” and click it to reset the filters you set on the list. 
-    </div>
+  <hr class="border-dark-subtle">
+  <div class="container mt-5" id="response" hidden>
+    <h2>Your Question is successfully submitted!</h2>
+    <h4>Please wait for 1-2 days to respond to your question. Answer will be sent to your email.
+    </h4>
+  </div>
+  <div class="container mt-5" id="Questionaire">
+    <h3>If you have question that is not in the FAQ or want to request something, let us know!</h3>
+    <form id="questionForm">
+        <div class="mb-3">
+            <label for="userQuestion" class="form-label">Type your question</label>
+            <textarea type="text" class="form-control" id="userQuestion" placeholder="Enter your question here" required></textarea>
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
   </div>
 </div>
-</div>
-<div class="container mt-5" id="response" hidden>
-  <h2>Your Question is successfully submitted!</h2>
-  <h4>Please wait for 1-2 days to respond to your question. Answer will be sent to your email.
-  </h4>
-</div>
-<div class="container mt-5" id="Questionaire">
-  <h2>If You Have Question That Is Not In The FAQ, Let Us Know!</h2>
-  <form id="questionForm">
-      <div class="mb-3">
-          <label for="userQuestion" class="form-label">Type your question</label>
-          <textarea type="text" class="form-control" id="userQuestion" placeholder="Enter your question here" required></textarea>
-      </div>
-      <div class="mb-3">
-          <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
-  </form>
-</div>
+</section>
 <br><br><br><br><br>
 <script>
       document.getElementById('questionForm').addEventListener('submit', function(event) {

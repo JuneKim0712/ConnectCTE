@@ -1,47 +1,47 @@
 body {
-    background-image: url("asset/background.png") 
+  background-image: url("asset/background.png") 
 }
 
 .btn-login {
-  font-size: 0.9rem;
-  letter-spacing: 0.05rem;
-  padding: 0.75rem 1rem;
+font-size: 0.9rem;
+letter-spacing: 0.05rem;
+padding: 0.75rem 1rem;
 }
 
 #googleSignIn {
-  color: white;
-  background-color: #ea4335;
+color: white;
+background-color: #ea4335;
 }
 
 .facebook {
-  color: white !important;
-  background-color: #3b5998;
+color: white !important;
+background-color: #3b5998;
 }
 
 .facebook:hover {
-  color: white !important;
-  background-color: #273f73;
+color: white !important;
+background-color: #273f73;
 }
 
 #googleSignIn:hover{
-  background-color: #aa2f24;
+background-color: #aa2f24;
 }
 
 .navbar-brand{
-  font-family: "Playfair Display";
-  font-size: 1.4rem;
-  margin-right: 1.5rem;
+font-family: "Playfair Display";
+font-size: 1.4rem;
+margin-right: 1.5rem;
 }
 
 .nav-link {
-  font-family: "Playfair Display";
-  font-weight: 500;
-  font-size: 1.3rem;
-  margin-right: 1.5rem;
-  transition-duration: 0.4s;
+font-family: "Playfair Display";
+font-weight: 500;
+font-size: 1.3rem;
+margin-right: 1.5rem;
+transition-duration: 0.4s;
 }
 
 .nav-link:hover {
-  background-color: #333;
-  text-decoration: underline; /* Underline the text on hover */
+background-color: #333;
+text-decoration: underline; /* Underline the text on hover */
 }

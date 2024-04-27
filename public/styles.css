@@ -285,3 +285,11 @@ h3 {white-space: nowrap;}
     border-bottom: 1px solid blue;
 }
 
+
+#qna {
+    white-space: normal !important;
+}
+
+#Questionaire {
+    white-space: normal !important; 
+}
