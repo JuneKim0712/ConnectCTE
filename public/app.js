@@ -67,7 +67,8 @@ const renderPartners = partners => {
   partnerData = data
   elements.thingsList.innerHTML = partners.map(partner => `
         <tr>
-            <td>${partner.name}</td>
+            <td hidden><input type="checkbox" value=""></td>
+            <td id="tableName">${partner.name}</td>
             <td>${partner.type}</td>
             <td>${partner.sector}</td>
             <td>${partner.resources}</td>
@@ -77,8 +78,8 @@ const renderPartners = partners => {
             <td>${partner.address}</td>
             <td>${partner.date}</td>
             <td id="actionBtn">
-                <button class="btn btn-primary editBtn" data-id="${partner.id}">Edit</button>
-                <button class="btn btn-danger deleteBtn" data-id="${partner.id}">Delete</button>
+                <button class="btn btn-primary editBtn" id="editBtn" data-id="${partner.id}">Edit</button>
+                <button class="btn btn-danger deleteBtn" id="submitBtn" data-id="${partner.id}">Delete</button>
             </td>
         </tr>
     `).join('')
@@ -382,9 +383,9 @@ unsubWNoInput = fetchAndRenderPartners()
 doesInputExist()
 updateSortIndicators()
 
-const icons = document.querySelectorAll('.icon');
-icons.forEach (icon => {  
+const icons = document.querySelectorAll('.icon')
+icons.forEach(icon => {
   icon.addEventListener('click', (event) => {
-    icon.classList.toggle("open");
-  });
-});
+    icon.classList.toggle('open')
+  })
+})

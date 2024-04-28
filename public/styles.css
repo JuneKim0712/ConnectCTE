@@ -11,19 +11,30 @@ body {
     font-size: 1em;
     line-height: 1.6;
     color: #333;
-    overflow-x: hidden; /* Prevent horizontal scroll */
+    overflow-x: hidden; /*Prevent horizontal scroll*/
 }
 
 .table-container thead{
     cursor: pointer; /* Change cursor to pointer when hovering over the data table */
 }
 
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e5e5e5; /* Use your preferred color for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* Optionally, customize the color for even rows if desired */
+}
 
 .container {
     max-width: 90%;
     margin: 0 auto;
     padding: 10px; 
     white-space: nowrap;
+}
+
+.accordion-button, .accordion-body{
+    font-size: 20px;
 }
 
 .btn-primary {
@@ -36,14 +47,37 @@ body {
 .img {
     margin: 0 auto;
 }
+#editBtn, #submitBtn {
+    border-radius: 0px;
+}
+
+.editBtn {
+    background-color: #4a6d9e;
+    border-color: #4a6d9e;
+}
+
+#tableName {
+    font-weight: 700;
+}
+
 .header {
     display: flex;
     justify-content: space-between;
     margin-bottom: 10px; /* Reduced margin */
 }
 #addPartnerBtn, #importPartnerBtn, #downloadBtn {
+    font-family: "Playfair Display";
+    font-weight: 600;
+    background-color: #495057;
+    border-radius: 0px;
     margin-left: 1em;
+    transition-duration: 0.4s;
 }
+
+#addPartnerBtn:hover, #importPartnerBtn:hover, #downloadBtn:hover {
+    background-color: #333;
+}
+
 /* Ensure sort indicator stays in the same line */
 .table th {
     white-space: nowrap; /* Prevent wrapping */
@@ -77,13 +111,16 @@ h3 {white-space: nowrap;}
     transition: background-color 0.3s ease;
 }
 
+.deleteBtn {
+    background-color: #9e4a4a;
+    border-color: #9e4a4a;
+}
 
 .close-btn {
     padding: 8px 16px; /* Reduced padding */
     font-size: 16px;
     font-weight: 700;
     color: #fff;
-    background-color: #dc3545; /* Red color */
     border: none;
     border-radius: 6px;
     cursor: pointer;
@@ -91,7 +128,7 @@ h3 {white-space: nowrap;}
 }
 
 .close-btn:hover {
-    background-color: #c82333; /* Darker red color on hover */
+    background-color: lightsalmon; /* Darker red color on hover */
 }
 
 .table {
@@ -101,17 +138,30 @@ h3 {white-space: nowrap;}
 
 .table th, .table td {
     font-family: "JetBrans Mono";
+    font-weight: 500;
     max-width: 15em;
     overflow-wrap: break-word;
     white-space: pre-wrap;
     padding: 10px; /* Reduced padding */
-    border-bottom: 1px solid #dee2e6;
+    border: 1.2px solid white;
 }
-
 .table th {
     background-color: #f8f9fa;
-    font-weight: 700;
     text-align: left;
+}
+
+.table td > input[type="checkbox"] {
+    max-width: 100em;
+    white-space: pre-wrap;
+    padding: 10px; /* Reduced padding */
+    border: 1.2px solid white;
+    width: 30px; /* Adjust the width as needed */
+    height: 30px;
+    display: flex; /* Use flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    width: 100%; /* Make the width match the cell width */
+    margin: auto; /* Center the checkbox */
 }
 
 .search-container {
@@ -146,10 +196,17 @@ h3 {white-space: nowrap;}
     font-weight: 500;
     font-size: 1.3rem;
     margin-right: 1.5rem;
+    transition-duration: 0.4s;
+}
+
+.nav-link:hover {
+    background-color: #333;
+    text-decoration: underline; /* Underline the text on hover */
 }
 
 #userDetails {
     text-align: center;
+    font-family: "playfair Display";
     font-size: 1.4rem;
     margin-right: 1.4rem;
     color:antiquewhite;
@@ -210,15 +267,11 @@ h3 {white-space: nowrap;}
 }
 
 .btn-secondary {
-    background-color: red;
-    border-color: red;
+    background-color: #FF6961;
+    border: 0px;
     padding: 10px;
 }
 
-.btn-secondary:hover {
-    background-color: darkred;
-    border-color: darkred;
-}
 
 
 
@@ -231,4 +284,12 @@ h3 {white-space: nowrap;}
     box-shadow: none;
     border-bottom: 1px solid blue;
 }
-  
+
+
+#qna {
+    white-space: normal !important;
+}
+
+#Questionaire {
+    white-space: normal !important; 
+}

@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif, 'Playfair Display';
+    font-size: 1em;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden; /*Prevent horizontal scroll*/
+}
+
+.table-container thead{
+    cursor: pointer; /* Change cursor to pointer when hovering over the data table */
+}
+
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e5e5e5; /* Use your preferred color for odd rows */
+}
+
+.table-striped tbody tr:nth-of-type(even) {
+    background-color: #ffffff; /* Optionally, customize the color for even rows if desired */
+}
+
+.container {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 10px;
+}
+
+.accordion-button, .accordion-body{
+    font-size: 20px;
+}
+
+.btn-primary {
+    font-family: "Playfair Display";
+    font-weight: 600;
+    background-color: #495057;
+    border-radius: 0px;
+    transition-duration: 0.4s;
+}
+
+.btn-primary:hover{
+    background-color: #333;
+}
+.img {
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px; /* Reduced margin */
+}
+
+#resetBtn {
+    border-radius: 0;
+}
+
+
+h2 {
+    margin-bottom: 10px; /* Reduced margin */
+    font-weight: 700;
+    color: #333;
+}
+
+
+.btn {
+    padding: 8px 16px; /* Reduced padding */
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+.navbar-brand{
+    font-family: "Playfair Display";
+
+    font-size: 1.4rem;
+    margin-right: 1.5rem;
+}
+
+.thankyou-footer-wrapper{
+    display:none;
+}
+
+.nav-link {
+    font-family: "Playfair Display";
+    font-weight: 500;
+    font-size: 1.3rem;
+    margin-right: 1.5rem;
+    transition-duration: 0.4s;
+}
+
+.nav-link:hover {
+    background-color: #333;
+    text-decoration: underline; /* Underline the text on hover */
+}
+
+#userDetails {
+    text-align: center;
+    font-family: "playfair Display";
+    font-size: 1.4rem;
+    margin-right: 1.4rem;
+    color:antiquewhite;
+    font-weight: bold;
+}
+#logo {
+    margin-right: 1.3rem;
+}
+
+
+#qna {
+    white-space: normal !important;
+}
+
+#Questionaire {
+    white-space: normal !important;
+    margin: auto;
+    width: 85%;
+}
