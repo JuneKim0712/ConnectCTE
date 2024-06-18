@@ -234,14 +234,31 @@ function addPartner (dbReference, name, type, sector, resources, individual, ema
   })
 }
 
-function importPartner () {
+async function importPartner () {
+  const newCollectionRef = db.collection('partners')
+
+  // Adding a new document to the collection
+  const docRef = await newCollectionRef.doc('dummy').set({
+    name: 'John Doe',
+    age: 30,
+    email: 'johndoe@example.com'
+  })
   elements.importPartnerModal.modal('hide')
   csvToJson(elements.csvFileInput).then(result => {
     dbReference.get()
-      .then(() => result.forEach(partner => addPartner(dbReference, partner.name, partner.type, partner.sector, partner.resources,
-        partner.individual, partner.email, partner.phone, partner.address, partner.date)))
+      .then(() => result.forEach(partner => addPartner(dbReference,
+        partner.name.replace('"', '').replace('"', ''),
+        partner.type.replace('"', '').replace('"', ''),
+        partner.sector.replace('"', '').replace('"', ''),
+        partner.resources.replace('"', '').replace('"', ''),
+        partner.individual.replace('"', '').replace('"', ''),
+        partner.email.replace('"', '').replace('"', ''),
+        partner.phone.replace('"', '').replace('"', ''),
+        partner.address.replace('"', '').replace('"', ''),
+        partner.date.replace('"', '').replace('"', ''))))
       .catch(error => console.error('Error adding documents:', error))
   })
+  dbReference.doc('dummy').delete()
 }
 
 // Reset form
