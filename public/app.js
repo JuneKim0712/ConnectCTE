@@ -238,10 +238,8 @@ async function importPartner () {
   const newCollectionRef = db.collection('partners')
 
   // Adding a new document to the collection
-  const docRef = await newCollectionRef.doc('dummy').set({
-    name: 'John Doe',
-    age: 30,
-    email: 'johndoe@example.com'
+  const addNewDoc = await newCollectionRef.doc('dummy').set({
+    name: ' '
   })
   elements.importPartnerModal.modal('hide')
   csvToJson(elements.csvFileInput).then(result => {
